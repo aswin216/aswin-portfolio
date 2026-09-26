@@ -1,0 +1,131 @@
+@use "../components/variables.scss" as *;
+
+.footer {
+  padding: 70px 60px 25px;
+  background: #0b2927;
+  color: $white;
+
+  &_container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  &_top {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 60px;
+    padding-bottom: 50px;
+    border-bottom: 1px solid rgba($white, 0.1);
+  }
+
+  &_brand {
+    max-width: 350px;
+  }
+
+  &_logo {
+    color: $white;
+    text-decoration: none;
+    font-family: $font-primary;
+    font-size: $fs-2xl;
+    font-weight: $fw-bold;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $accent;
+    }
+  }
+
+  &_brand p {
+    margin: 15px 0 0;
+    font-family: $font-primary;
+    font-size: $fs-sm;
+    line-height: 1.6;
+    color: rgba($white, 0.6);
+  }
+
+  &_links,
+  &_socials {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  &_links a,
+  &_socials a {
+    width: fit-content;
+    color: rgba($white, 0.75);
+    text-decoration: none;
+    font-family: $font-primary;
+    font-size: $fs-sm;
+    transition:
+      color 0.3s ease,
+      transform 0.3s ease;
+
+    &:hover {
+      color: $accent;
+      transform: translateX(4px);
+    }
+  }
+
+  &_bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 25px;
+
+    p {
+      margin: 0;
+      font-family: $font-primary;
+      font-size: $fs-xs;
+      color: rgba($white, 0.5);
+    }
+
+    a {
+      color: $accent;
+      text-decoration: none;
+      font-family: $font-primary;
+      font-size: $fs-xs;
+      font-weight: $fw-medium;
+
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 60px 24px 20px;
+
+    &_top {
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    &_brand {
+      grid-column: 1 / -1;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 50px 20px 20px;
+
+    &_top {
+      grid-template-columns: 1fr;
+      gap: 35px;
+    }
+
+    &_brand {
+      grid-column: auto;
+    }
+
+    &_bottom {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 15px;
+    }
+  }
+}

@@ -1,0 +1,148 @@
+@use "../components/variables.scss" as *;
+
+.skills {
+  padding: 80px 60px;
+  background: $bg-primary;
+
+  &_container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  &_heading {
+    max-width: 750px;
+    margin-bottom: 60px;
+  }
+
+  &_label {
+    display: inline-block;
+    margin-bottom: 15px;
+    font-family: $font-primary;
+    font-size: $fs-sm;
+    font-weight: $fw-semibold;
+    letter-spacing: 2px;
+    color: $accent-dark;
+  }
+
+  &_title {
+    margin: 0;
+    font-family: $font-primary;
+    font-size: $fs-6xl;
+    font-weight: $fw-bold;
+    line-height: 1.2;
+    color: $text-primary;
+
+    span {
+      color: $accent-dark;
+    }
+  }
+
+  &_description {
+    max-width: 650px;
+    margin-top: 22px;
+    font-family: $font-primary;
+    font-size: $fs-md;
+    line-height: 1.6;
+    color: $text-secondary;
+  }
+
+  &_grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  &_card {
+    position: relative;
+    padding: 35px;
+    min-height: 300px;
+    border-radius: 20px;
+    background: $white;
+    border: 1px solid rgba($accent-dark, 0.12);
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 45px rgba(18, 60, 58, 0.12);
+    }
+  }
+
+  &_number {
+    display: block;
+    margin-bottom: 30px;
+    font-family: $font-primary;
+    font-size: $fs-sm;
+    font-weight: $fw-semibold;
+    color: $accent-dark;
+  }
+
+  &_card h2 {
+    margin: 0 0 12px;
+    font-family: $font-primary;
+    font-size: $fs-2xl;
+    font-weight: $fw-bold;
+    color: $text-primary;
+  }
+
+  &_card p {
+    margin: 0 0 25px;
+    font-family: $font-primary;
+    font-size: $fs-md;
+    line-height: 1.6;
+    color: $text-secondary;
+  }
+
+  &_list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    span {
+      padding: 7px 11px;
+      border-radius: 6px;
+      background: $bg-primary;
+      color: $text-primary;
+      font-family: $font-primary;
+      font-size: $fs-xs;
+      font-weight: $fw-medium;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .skills {
+    padding: 70px 40px;
+
+    &_grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &_title {
+      font-size: $fs-5xl;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .skills {
+    padding: 40px 24px;
+
+    &_title {
+      font-size: $fs-4xl;
+    }
+
+    &_description {
+      font-size: $fs-md;
+    }
+
+    &_grid {
+      grid-template-columns: 1fr;
+    }
+
+    &_card {
+      min-height: auto;
+    }
+  }
+}

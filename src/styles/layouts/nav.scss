@@ -1,0 +1,131 @@
+@use "../components/variables.scss" as *;
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  padding: 16px 28px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  background: $bg-secondary;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 8px 30px rgba(18, 60, 58, 0.1);
+
+  &_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &_logo {
+    color: $white;
+    text-decoration: none;
+    font-size: $fs-2xl;
+    font-family: $font-primary;
+    font-weight: $fw-semibold;
+  }
+
+  &_toggle {
+    display: none;
+    border: none;
+    background: transparent;
+    color: $text-primary;
+    cursor: pointer;
+  }
+
+  &_menu {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &_link {
+    position: relative;
+    color: rgba($white, 0.9);
+    text-decoration: none;
+    font-family: $font-primary;
+    font-size: $fs-sm;
+    padding: 8px 16px;
+    transition: all .3s ease;
+
+    &:hover {
+      color: $accent;
+    }
+  }
+
+  &_cta {
+    padding: 8px 16px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: $fs-sm;
+    font-weight: $fw-semibold;
+    background: rgba($accent, 0.9);
+    color: $white;
+    transition: all .3s ease;
+
+    &:hover {
+      background: $accent-dark;
+      color: $white;
+      transform: translateY(-2px);
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 10px 20px;
+
+    &_container {
+      position: relative;
+    }
+
+    &_toggle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba($white, 0.9);
+      color: $text-primary;
+      padding: 6px;
+      border-radius: 4px;
+      transition: all .3s ease;
+
+      &:hover {
+        background: rgba($accent, 0.9);
+        color: rgba($white, 0.9);
+      }
+    }
+
+    &_menu {
+      position: fixed;
+      top: 50px;
+      left: 0;
+      width: 100%;
+      box-sizing: border-box;
+      display: none;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 5px;
+      padding: 15px 20px;
+      border-radius: 0 0 12px 12px;
+      background: $bg-secondary;
+      box-shadow: 0 15px 40px rgba(18, 60, 58, 0.12);
+
+      &--open {
+        display: flex;
+      }
+    }
+
+    &_link {
+      //width: 100%;
+      box-sizing: border-box;
+      padding: 12px 15px;
+    }
+
+    &_cta {
+      margin: 8px 0 0;
+      text-align: center;
+    }
+  }
+}

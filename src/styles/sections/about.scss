@@ -1,0 +1,155 @@
+@use "../components/variables.scss" as *;
+
+.about {
+  padding: 80px 60px;
+  background: $white;
+
+  &_container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  &_heading {
+    max-width: 800px;
+    margin-bottom: 20px;
+  }
+
+  &_label {
+    display: inline-block;
+    margin-bottom: 16px;
+    font-family: $font-primary;
+    font-size: $fs-sm;
+    font-weight: $fw-semibold;
+    letter-spacing: 2px;
+    color: $accent-dark;
+  }
+
+  &_title {
+    margin: 0;
+    font-family: $font-primary;
+    font-size: $fs-6xl;
+    font-weight: $fw-bold;
+    line-height: 1.2;
+    color: $text-primary;
+
+    span {
+      color: $accent-dark;
+    }
+  }
+
+  &_content {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  &_text {
+    p {
+      margin: 0 0 20px;
+      font-family: $font-primary;
+      font-size: $fs-md;
+      line-height: 1.6;
+      color: $text-secondary;
+      text-align: justify;
+    }
+  }
+
+  &_button {
+    display: inline-flex;
+    margin-top: 20px;
+    padding: 12px 22px;
+    border-radius: 8px;
+    background: $bg-secondary;
+    color: $white;
+    text-decoration: none;
+    font-family: $font-primary;
+    font-size: $fs-sm;
+    font-weight: $fw-semibold;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: $accent-dark;
+      transform: translateY(-3px);
+    }
+  }
+
+  &_card {
+    padding: 40px;
+    border-radius: 24px;
+    background: $bg-primary;
+    border: 1px solid rgba($accent-dark, 0.12);
+    box-shadow: 0 20px 50px rgba(18, 60, 58, 0.08);
+
+    &_label {
+      font-family: $font-primary;
+      font-size: $fs-xs;
+      font-weight: $fw-semibold;
+      letter-spacing: 1.5px;
+      color: $accent-dark;
+    }
+
+    h2 {
+      margin: 15px 0 25px;
+      font-family: $font-primary;
+      font-size: $fs-2xl;
+      font-weight: $fw-bold;
+      color: $text-primary;
+    }
+  }
+
+  &_skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    span {
+      padding: 8px 13px;
+      border-radius: 6px;
+      background: $white;
+      color: $text-primary;
+      font-family: $font-primary;
+      font-size: $fs-sm;
+      font-weight: $fw-medium;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .about {
+    padding: 70px 40px;
+
+    &_content {
+      gap: 50px;
+    }
+
+    &_title {
+      font-size: $fs-5xl;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 40px 24px;
+
+    &_heading {
+      margin-bottom: 45px;
+    }
+
+    &_title {
+      font-size: $fs-4xl;
+    }
+
+    &_content {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    &_text {
+      p {
+        font-size: $fs-md;
+      }
+    }
+  }
+}

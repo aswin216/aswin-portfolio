@@ -1,0 +1,214 @@
+@use "../components/variables.scss" as *;
+
+.contact {
+  padding: 80px 60px;
+  background: $bg-secondary;
+  color: $white;
+
+  &_container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  &_heading {
+    max-width: 700px;
+    margin-bottom: 70px;
+  }
+
+  &_label {
+    display: inline-block;
+    margin-bottom: 15px;
+    font-family: $font-primary;
+    font-size: $fs-sm;
+    font-weight: $fw-semibold;
+    letter-spacing: 2px;
+    color: $accent;
+  }
+
+  &_title {
+    margin: 0;
+    font-family: $font-primary;
+    font-size: $fs-6xl;
+    font-weight: $fw-bold;
+    line-height: 1.2;
+    color: $white;
+
+    span {
+      color: $accent;
+    }
+  }
+
+  &_description {
+    max-width: 600px;
+    margin-top: 22px;
+    font-family: $font-primary;
+    font-size: $fs-md;
+    line-height: 1.6;
+    color: rgba($white, 0.7);
+  }
+
+  &_content {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 90px;
+    align-items: start;
+  }
+
+  &_info {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+  }
+
+  &_item {
+    &_label {
+      display: block;
+      margin-bottom: 10px;
+      font-family: $font-primary;
+      font-size: $fs-xs;
+      font-weight: $fw-semibold;
+      letter-spacing: 1.5px;
+      color: $accent;
+    }
+
+    a,
+    p {
+      margin: 0;
+      font-family: $font-primary;
+      font-size: $fs-md;
+      color: rgba($white, 0.9);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $accent;
+      }
+    }
+  }
+
+  &_socials {
+    display: flex;
+    gap: 20px;
+
+    a {
+      color: rgba($white, 0.9);
+    }
+  }
+
+  &_form {
+    padding: 35px;
+    border-radius: 20px;
+    background: rgba($white, 0.06);
+    border: 1px solid rgba($white, 0.1);
+  }
+
+  &_field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 22px;
+
+    label {
+      font-family: $font-primary;
+      font-size: $fs-sm;
+      font-weight: $fw-medium;
+      color: rgba($white, 0.9);
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 13px 15px;
+      border: 1px solid rgba($white, 0.12);
+      border-radius: 8px;
+      outline: none;
+      background: rgba($white, 0.06);
+      color: $white;
+      font-family: $font-primary;
+      font-size: $fs-sm;
+      transition: border 0.3s ease;
+
+      &::placeholder {
+        color: rgba($white, 0.4);
+      }
+
+      &:focus {
+        border-color: $accent;
+      }
+    }
+
+    textarea {
+      resize: vertical;
+    }
+  }
+
+  &_form button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 13px 20px;
+    border: none;
+    border-radius: 8px;
+    background: $accent;
+    color: $bg-secondary;
+    cursor: pointer;
+    font-family: $font-primary;
+    font-size: $fs-sm;
+    font-weight: $fw-semibold;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: $accent-dark;
+      color: $white;
+      transform: translateY(-2px);
+    }
+
+    span {
+      font-size: $fs-lg;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .contact {
+    padding: 70px 40px;
+
+    &_content {
+      gap: 50px;
+    }
+
+    &_title {
+      font-size: $fs-5xl;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .contact {
+    padding: 40px 24px;
+
+    &_title {
+      font-size: $fs-4xl;
+    }
+
+    &_description {
+      font-size: $fs-md;
+    }
+
+    &_content {
+      grid-template-columns: 1fr;
+      gap: 50px;
+    }
+
+    &_form {
+      padding: 25px;
+    }
+  }
+}

@@ -1,0 +1,234 @@
+@use "../components/variables.scss" as *;
+
+.hero {
+  background: $bg-primary;
+  padding: 80px 60px;
+  height: 95vh;
+  display: flex;
+  align-items: center;
+
+  &_container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 80px;
+  }
+
+  &_content {
+    flex: 1;
+    max-width: 680px;
+  }
+
+  &_greetings {
+    display: inline-block;
+    margin-bottom: 18px;
+    font-family: $font-primary;
+    font-size: $fs-sm;
+    font-weight: $fw-semibold;
+    letter-spacing: 2px;
+    color: $accent-dark;
+  }
+
+  &_title {
+    margin: 0;
+    font-family: $font-primary;
+    //text-align: justify;
+    font-size: $fs-8xl;
+    font-weight: $fw-bold;
+    line-height: 1.2;
+    letter-spacing: -1px;
+    color: $text-primary;
+  }
+
+  &_description {
+    max-width: 580px;
+    margin: 28px 0 0;
+    font-family: $font-primary;
+    text-align: justify;
+    font-size: $fs-md;
+    font-weight: $fw-regular;
+    line-height: 1.6;
+    color: $text-secondary;
+  }
+
+  &_actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 35px;
+  }
+
+  &_primary,
+  &_secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 140px;
+    padding: 12px 22px;
+    border-radius: 8px;
+    font-family: $font-primary;
+    font-size: $fs-sm;
+    font-weight: $fw-semibold;
+    text-decoration: none;
+    transition:
+      background 0.3s ease,
+      color 0.3s ease,
+      transform 0.3s ease;
+  }
+
+  &_primary {
+    background: $bg-secondary;
+    color: $white;
+
+    &:hover {
+      background: $accent-dark;
+      transform: translateY(-3px);
+    }
+  }
+
+  &_secondary {
+    border: 1px solid $accent-dark;
+    color: $accent-dark;
+    background: transparent;
+
+    &:hover {
+      background: $accent;
+      color: $bg-secondary;
+      transform: translateY(-3px);
+    }
+  }
+
+  &_visual {
+    flex: 0 0 380px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &_card {
+    width: 100%;
+    min-height: 280px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    border: 1px solid rgba(18, 60, 58, 0.15);
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.65);
+    box-shadow: 0 20px 60px rgba(18, 60, 58, 0.12);
+    text-align: center;
+
+    span {
+      font-family: $font-primary;
+      font-size: $fs-lg;
+      font-weight: $fw-semibold;
+      color: $text-primary;
+    }
+
+    strong {
+      font-family: $font-primary;
+      font-size: $fs-md;
+      font-weight: $fw-medium;
+      color: $accent-dark;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero {
+    padding: 70px 40px;
+    height: 90vh;
+
+    &_container {
+      gap: 50px;
+    }
+
+    &_content {
+      max-width: 560px;
+    }
+
+    &_title {
+      font-size: $fs-6xl;
+      line-height: 1.15;
+    }
+
+    &_description {
+      max-width: 500px;
+      font-size: $fs-md;
+    }
+
+    &_visual {
+      flex: 0 0 320px;
+    }
+
+    &_card {
+      min-height: 250px;
+      padding: 30px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 60px 25px;
+    min-height: auto;
+    height: auto;
+
+    &_container {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 50px;
+    }
+
+    &_content {
+      max-width: 100%;
+    }
+
+    &_greetings {
+      margin-bottom: 14px;
+      font-size: $fs-sm;
+    }
+
+    &_title {
+      font-size: $fs-5xl;
+      line-height: 1.15;
+      letter-spacing: -0.5px;
+    }
+
+    &_description {
+      max-width: 100%;
+      margin-top: 22px;
+      text-align: left;
+      font-size: $fs-md;
+      line-height: 1.6;
+    }
+
+    &_actions {
+      margin-top: 28px;
+      gap: 12px;
+    }
+
+    &_primary,
+    &_secondary {
+      min-width: 130px;
+      padding: 11px 18px;
+    }
+
+    &_visual {
+      flex: none;
+      width: 100%;
+    }
+
+    &_card {
+      width: 100%;
+      min-height: 220px;
+      padding: 25px;
+      box-sizing: border-box;
+      border-radius: 24px;
+    }
+  }
+}
